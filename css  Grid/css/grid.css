@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans8");
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.4rem;
+    min-height: 100%;
+    background-color: aqua;
+   
+}
+
+.grid-container > * {
+  box-shadow:  -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.header{
+    grid-area: header;
+    background-color: palegreen;
+}
+
+.navbar{
+    grid-area: navbar;
+    background-color: darkgrey;
+}
+
+.main{
+    grid-area: main;
+    background-color: lemonchiffon;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: rgb(152, 30, 163);
+}
+
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template:
+    "header" 100px
+    "navbar" 100px
+    "main" auto
+    "footer"100px; 
+} 
+
+@media (min-width: 600px) {
+    .grid-container {
+       /*grid-template-columns: auto ;
+       grid-template-rows: 100px 100px auto 100px;
+       grid-template-areas: 
+      "header header"
+        "navbar navbar  navbar"
+        "main main"
+        "footer footer";*/
+        grid-template: 
+        "header header" 100px
+        "navbar navbar  navbar" 1000
+        "main main" auto
+        "footer footer" 100px /
+       650px auto;
+    }
+}
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template: 
+        "header header header" 100px
+        "navbar navbar  main" auto
+       "footer footer footer" 600px /
+        650px auto 650px;
+    }
+}
